@@ -22,9 +22,9 @@ function App() {
           </div>
         </div>
         <div className="row">
-            <div className="col-12 d-flex ">
+            <div className="col-12 d-flex justify-content-center">
               <VerticalMenu />
-              {/* <NewsGrid /> */}
+              <NewsGrid />
             </div>
           </div>
        </div>
