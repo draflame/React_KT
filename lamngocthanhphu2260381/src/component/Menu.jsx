@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "../css/Menu.css";
+// import home from "../assets/image.png"; // Import hình ảnh (nếu cần)
 
 const menuItems = [
   {
@@ -36,9 +37,23 @@ const menuItems = [
   { label: 'Văn bằng' },
 ];
 
-const MenuItem = ({ index, parentItems = menuItems }) => {
+const SubmenuItem = ({ item }) => {
+  return (
+    <li className="submenu-item">
+      {item.label}
+      {item.submenu && (
+        <ul className="submenu">
+          {item.submenu.map((subItem, subIndex) => (
+            <SubmenuItem key={subIndex} item={subItem} />
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+};
+
+const MenuItem = ({ item }) => {
   const [isSubmenuVisible, setIsSubmenuVisible] = useState(false);
-  const item = parentItems[index];
 
   const handleMouseEnter = () => {
     if (item.submenu) {
@@ -54,7 +69,7 @@ const MenuItem = ({ index, parentItems = menuItems }) => {
 
   return (
     <li
-      className="menu-item"
+      className={`menu-item ${item.submenu ? 'has-submenu' : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -62,7 +77,7 @@ const MenuItem = ({ index, parentItems = menuItems }) => {
       {item.submenu && (
         <ul className={`submenu ${isSubmenuVisible ? 'visible' : ''}`}>
           {item.submenu.map((subItem, subIndex) => (
-            <MenuItem key={subIndex} index={subIndex} parentItems={item.submenu} />
+            <SubmenuItem key={subIndex} item={subItem} />
           ))}
         </ul>
       )}
@@ -73,10 +88,15 @@ const MenuItem = ({ index, parentItems = menuItems }) => {
 const Menu = () => {
   return (
     <ul className="menu">
-    
-      {menuItems.map((_, index) => (
-        <MenuItem key={index} index={index} />
+      {/* <li className="menu-item">
+        <img src={home} alt="Home" className="home-icon" />
+      </li> */}
+      {menuItems.map((item, index) => (
+        <MenuItem key={index} item={item} />
       ))}
+      <li>
+        <input type="text" placeholder="Tìm kiếm" /> {/* Thêm placeholder cho input */}
+      </li>
     </ul>
   );
 };

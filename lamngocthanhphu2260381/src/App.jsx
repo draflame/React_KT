@@ -2,11 +2,14 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 // import './App.css'
+import anh1 from './assets/1.png'
 import Menu from './component/Menu'
 import img from './assets/slider.png'
 import VerticalMenu from './component/VerticalMenu'
 import NewsGrid from './component/NewsGrid'
 import Header from './component/Header'
+import Footer from './component/Footer'
+import HighlightSection from './component/HighlightSection'
 function App() {
   const [count, setCount] = useState(0)
   
@@ -29,7 +32,11 @@ function App() {
             </div>
           </div>
        </div>
+      
+      <HighlightSection />
+       <Footer/>
         <Header/>
+        
     </>
   )
 }
