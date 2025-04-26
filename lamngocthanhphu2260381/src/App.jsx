@@ -6,6 +6,7 @@ import Menu from './component/Menu'
 import img from './assets/slider.png'
 import VerticalMenu from './component/VerticalMenu'
 import NewsGrid from './component/NewsGrid'
+import Header from './component/Header'
 function App() {
   const [count, setCount] = useState(0)
   
@@ -28,7 +29,7 @@ function App() {
             </div>
           </div>
        </div>
-        
+        <Header/>
     </>
   )
 }

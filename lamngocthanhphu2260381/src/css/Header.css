@@ -1,0 +1,74 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    /* Màu nền nhạt giống ảnh */
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.email {
+    color: #007bff;
+    /* Màu xanh cho email */
+    margin-right: 20px;
+}
+
+.logo {
+    height: 50px;
+    /* Điều chỉnh chiều cao logo */
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+}
+
+.visits,
+.today-visits,
+.online {
+    margin-left: 20px;
+    color: #555;
+}
+
+.fa {
+    margin-right: 5px;
+    /* Khoảng cách giữa icon và text */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.share {
+    margin-right: 10px;
+    color: #555;
+}
+
+.social-icon {
+    height: 25px;
+    /* Điều chỉnh kích thước icon mạng xã hội */
+    margin-left: 10px;
+}
+
+
+/* Tùy chỉnh màu cho từng icon (nếu cần) */
+
+.facebook {
+    /* Có thể thêm style riêng cho icon Facebook */
+}
+
+.twitter {
+    /* Có thể thêm style riêng cho icon Twitter */
+}
+
+.linkedin {
+    /* Có thể thêm style riêng cho icon LinkedIn */
+}
