@@ -1,0 +1,100 @@
+.vertical-menu {
+    width: 250px;
+    /* Điều chỉnh độ rộng theo ý muốn */
+    background-color: #f0f0f0;
+    /* Màu nền xám nhạt */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.menu-title {
+    color: white;
+    background-color: #204a87;
+    /* Màu xanh đậm tiêu đề */
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.vertical-menu-item {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    /* Thiết lập context định vị cho submenu */
+}
+
+.vertical-menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-header {
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.item-header:hover {
+    background-color: #d0d0d0;
+}
+
+.arrow {
+    color: #777;
+    font-size: 1.2em;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    /* Thêm border cho rõ ràng */
+    border-radius: 3px;
+    position: absolute;
+    /* Định vị tuyệt đối so với .vertical-menu-item */
+    top: 0;
+    /* Căn trên */
+    left: 100%;
+    /* Đẩy sang bên phải */
+    min-width: 200px;
+    /* Tăng độ rộng tối thiểu của submenu */
+    z-index: 10;
+    /* Đảm bảo hiển thị trên các phần tử khác */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Thêm bóng đổ (tùy chọn) */
+    display: none;
+    /* Ẩn mặc định */
+}
+
+.vertical-menu-item:hover .submenu {
+    display: block;
+    /* Hiển thị khi hover vào .vertical-menu-item */
+}
+
+.submenu-item {
+    padding: 10px 15px;
+    color: #555;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    /* Thêm đường kẻ giữa các submenu item */
+}
+
+.submenu-item:last-child {
+    border-bottom: none;
+    /* Loại bỏ đường kẻ ở item cuối cùng */
+}
+
+.submenu-item:hover {
+    background-color: #f9f9f9;
+    color: #204a87;
+    /* Đổi màu chữ khi hover (tùy chọn) */
+}

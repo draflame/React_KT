@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 // import './App.css'
 import Menu from './component/Menu'
 import img from './assets/slider.png'
+import VerticalMenu from './component/VerticalMenu'
+import NewsGrid from './component/NewsGrid'
 function App() {
   const [count, setCount] = useState(0)
   
@@ -19,8 +21,14 @@ function App() {
           
           </div>
         </div>
-       
+        <div className="row">
+            <div className="col-12 d-flex ">
+              <VerticalMenu />
+              {/* <NewsGrid /> */}
+            </div>
+          </div>
        </div>
+        
     </>
   )
 }
